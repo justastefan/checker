@@ -1,0 +1,8 @@
+
+<p>Startseite. Wir später auf {{#link-to 'cockpit' '2017-11-01'}}cockpit{{/link-to}} umgeleitet (per default).</p>
+
+
+
+{{#each model as |entry|}}
+<p>{{#link-to 'cockpit' entry.id}}{{entry.id}}{{/link-to}}</p>
+{{/each}}

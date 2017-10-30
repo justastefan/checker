@@ -7,6 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('cockpit', { path: '/cockpit/:date_id' });
 });
 
 export default Router;
