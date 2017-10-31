@@ -9,6 +9,7 @@
 /bower_components
 
 # misc
+.DS_Store
 /.sass-cache
 /connect.lock
 /coverage/*
@@ -21,3 +22,6 @@ testem.log
 .node_modules.ember-try/
 bower.json.ember-try
 package.json.ember-try
+
+# in-repo-addon
+/lib/api/node_modules
