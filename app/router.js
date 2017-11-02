@@ -9,6 +9,8 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('cockpit', { path: '/cockpit/:date_id' });
   this.route('users');
+  this.route('login');
+  this.route('logout');
 });
 
 export default Router;
