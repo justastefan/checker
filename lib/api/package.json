@@ -9,5 +9,9 @@
       "history-support-middleware",
       "proxy-server-middleware"
     ]
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "pluralize": "^7.0.0"
   }
 }

@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
+import SecureRoute from '../mixins/secure-route';
 
-export default Route.extend({
+export default Route.extend(SecureRoute, {
   model() {
     return [
       {
