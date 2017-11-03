@@ -1,12 +1,16 @@
 <h1>Benutzer</h1>
 {{#paper-list}}
   {{#each model.users as |user|}}
-    {{#paper-item class="md-3-line"}}
+    {{#paper-item class="md-3-line" as |controls|}}
       <img src={{user.gravatarUrl}} alt={{user.name}} class="md-avatar">
       <div class="md-list-item-text">
         <h3>{{user.name}}</h3>
         <h4>{{user.email}}</h4>
-        <p>Some longer notes here could be here. But they aren't.</p>
+        <div class="md-secondary-container">
+          {{#controls.button secondary=true iconButton=true onClick=(action "deleteUser" user)}}
+            {{paper-icon "delete_forever"}}
+          {{/controls.button}}
+        </div>
       </div>
     {{/paper-item}}
   {{/each}}
