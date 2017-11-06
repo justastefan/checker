@@ -3,6 +3,27 @@
 
 
 
-{{#each model as |entry|}}
+<h2>Activities (new)</h2>
+{{#each model.activities as |activity|}}
+<p>
+  {{activity.name}} <br>
+  {{#if activity.isBoolean}}
+    {{#paper-checkbox value=activity.value onChange=(action (mut activity.value))}}
+      I did it!
+    {{/paper-checkbox}}
+  {{else}}
+    {{!-- fallback to counter input --}}
+    <div class="layout layout-align-center-center slider-container">
+      <span>{{paper-icon "check-circle" size=12}}</span>
+      {{paper-slider class="flex" min=0 max=255 value=activity.value onChange=(action (mut activity.value))}}
+      {{paper-input type="number" value=activity.value onChange=(action (mut activity.value))}}
+    </div>
+  {{/if}}
+</p>
+{{/each}}
+
+
+<h2>Cockpit Krahms (deprecated)</h2>
+{{#each model.dates as |entry|}}
 <p>{{#link-to 'cockpit' entry.id}}{{entry.id}}{{/link-to}}</p>
 {{/each}}
