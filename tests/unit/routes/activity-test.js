@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('route:cockpit', 'Unit | Route | cockpit', {
+moduleFor('route:activity', 'Unit | Route | activity', {
   // Specify the other units that are required for this test.
   needs: ['service:session', 'service:activityManager']
 });

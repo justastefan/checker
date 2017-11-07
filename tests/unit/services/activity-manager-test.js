@@ -1,8 +1,8 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('service:category', 'Unit | Service | category', {
+moduleFor('service:activity-manager', 'Unit | Service | activity manager', {
   // Specify the other units that are required for this test.
-  // needs: ['service:foo']
+  // needs: ['service:store']
 });
 
 // Replace this with your real tests.
