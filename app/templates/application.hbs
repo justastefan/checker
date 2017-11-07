@@ -1,4 +1,13 @@
-<h1>Checker</h1>
-<p>{{#link-to 'users'}}Benutzer{{/link-to}}</p>
-
+{{#if session.isAuthenticated}}
+    <h1>Checker</h1>
+    <p>
+    {{#if session.user.isLoading}}
+      Loading
+    {{else}}
+      Hi {{session.user.name}}! ({{#link-to 'logout'}}logout{{/link-to}})
+    {{/if}}
+    </p>
+    
+    <p>{{#link-to 'index'}}Home{{/link-to}} | {{#link-to 'users'}}Benutzer{{/link-to}}</p>
+{{/if}}
 {{outlet}}

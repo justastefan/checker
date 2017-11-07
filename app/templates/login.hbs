@@ -1,0 +1,9 @@
+
+{{#paper-select
+  placeholder="Select a user"
+  selected=selectedUser
+  options=model
+  onChange=(action "login")
+  as |user|}}
+  {{user.name}}
+{{/paper-select}}
