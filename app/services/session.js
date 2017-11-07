@@ -5,7 +5,7 @@ import RSVP from 'rsvp';
 
 export default Service.extend({
     store: service(),
-    id: null,
+    id: 1,
     isAuthenticated: computed.notEmpty('id'),
     user: computed('id', function() {
         return this.get('id') ? this.get('store').find('user', this.get('id')) : null;

@@ -1,0 +1,8 @@
+<p>activties</p>
+
+{{#each model as |activityItem|}}
+  <p>activity: {{activityItem.activity.name}}</p>
+
+{{else}}
+  <p>Nichts gefunden</p>
+{{/each}}

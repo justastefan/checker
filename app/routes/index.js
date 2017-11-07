@@ -1,20 +1,9 @@
-import RSVP from 'rsvp';
-import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
 import SecureRoute from '../mixins/secure-route';
 
 export default Route.extend(SecureRoute, {
-  store: service(),
-  model() {
-    return RSVP.hash({
-      activities: this.get('store').findAll('activity'),
-      dates: [
-        {
-          id: '2017-11-01'
-        },
-        {
-          id: '2017-10-30'
-        }
-      ]
-    });
+  beforeModel() {
+    let today = (new Date()).toISOString().slice(0,10);
+    this.transitionTo('cockpit', { date_id: today});
   }
 });

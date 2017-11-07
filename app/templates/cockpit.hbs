@@ -1,6 +1,19 @@
+<h2>Cockpit ({{model.dateId}})</h2>
 
-{{#each model as |category|}}
-  <p>{{category.name}}, {{category.value}}</p>
-{{else}}
-  <p>Nichts gefunden</p>
+{{#each model.items as |item|}}
+<p>
+  {{item.activity.name}} <br>
+  {{#if item.activity.isBoolean}}
+    {{#paper-checkbox value=item.amount onChange=(action (mut item.amount))}}
+      I did it!
+    {{/paper-checkbox}}
+  {{else}}
+    {{!-- fallback to counter input --}}
+    <div class="layout layout-align-center-center slider-container">
+      <span>{{paper-icon "check-circle" size=12}}</span>
+      {{paper-slider class="flex" min=0 max=255 value=item.amount onChange=(action (mut item.amount))}}
+      {{paper-input type="number" value=item.amount onChange=(action (mut item.amount))}}
+    </div>
+  {{/if}}
+</p>
 {{/each}}
